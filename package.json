@@ -1,38 +1,10 @@
 {
-  "name": "privacy-policies",
+  "name": "privacypolicies",
   "version": "1.0.0",
   "private": true,
-  "description": "One place for every app's privacy policy: one app, one URL. Express + MongoDB + React admin, built for Node 14.5.",
-  "license": "UNLICENSED",
-  "engines": {
-    "node": ">=14.5.0"
-  },
+  "description": "Privacy policies for M16 Labs apps at https://privacypolicies.metahos.com, one route per app.",
+  "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "node scripts/dev.js",
-    "build": "node scripts/build-client.js",
-    "seed": "node scripts/import-policies.js Documents --publish",
-    "import": "node scripts/import-policies.js",
-    "user": "node scripts/manage-users.js",
-    "test": "mocha"
-  },
-  "dependencies": {
-    "compression": "1.8.2",
-    "cookie-parser": "1.4.7",
-    "dotenv": "16.6.1",
-    "express": "4.22.3",
-    "helmet": "6.2.0",
-    "htmlparser2": "9.1.0",
-    "jsonwebtoken": "9.0.3",
-    "mongoose": "6.13.11",
-    "morgan": "1.12.1"
-  },
-  "devDependencies": {
-    "esbuild": "0.21.5",
-    "mocha": "10.8.2",
-    "nodemon": "3.1.9",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-router-dom": "6.30.6"
+    "start": "node index.js"
   }
 }
