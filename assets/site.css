@@ -490,6 +490,16 @@ a:hover {
   margin-bottom: 0;
 }
 
+/* "Need help now? Not here": the support page's emergency notice. */
+.policy .callout--urgent {
+  border-left-color: var(--danger);
+  background: var(--danger-tint);
+}
+
+.policy .callout--urgent strong {
+  color: var(--danger);
+}
+
 .table-scroll {
   overflow-x: auto;
   border: 1px solid var(--rule);
@@ -616,7 +626,7 @@ a:hover {
   overflow-wrap: anywhere;
 }
 
-/* ---- Home page ("/"): the count and one button per policy ---- */
+/* ---- Home page ("/"): one section per store, one card per app, one link per page ---- */
 
 .masthead--home {
   display: block;
@@ -630,37 +640,95 @@ a:hover {
   font-weight: 700;
 }
 
-.policy-buttons {
+.home-sep {
+  color: var(--ink-3);
+}
+
+.stores {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.store__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 1.3rem;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.store__platform {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.app-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.policy-button {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: 1.1rem 1.25rem;
+.app-card {
+  padding: 1rem 1.25rem 0.75rem;
   border: 1.5px solid var(--rule-strong);
   border-radius: 0.75rem;
   background: var(--paper);
-  color: var(--ink);
-  text-decoration: none;
 }
 
-.policy-button:hover,
-.policy-button:focus-visible {
-  border-color: var(--stamp);
-  background: var(--stamp-tint);
-}
-
-.policy-button__name {
+.app-card__name {
+  margin: 0 0 0.35rem;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
-.policy-button__path {
+.app-card__pages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app-card__pages > li + li {
+  border-top: 1px solid var(--rule);
+}
+
+.app-card__link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.1rem 1rem;
+  margin: 0 -0.6rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.45rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.app-card__link:hover,
+.app-card__link:focus-visible {
+  background: var(--stamp-tint);
+  color: var(--stamp);
+}
+
+.app-card__label {
+  font-weight: 600;
+}
+
+.app-card__path {
   color: var(--stamp);
   font-family: var(--font-mono);
   font-size: 0.8125rem;
