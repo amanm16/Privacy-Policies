@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--
+  HIRO — privacy policy.
+
+  COMPLETE as of 24 September 2026. No placeholders remain; it can be published
+  as it stands.
+
+  Confirmed by the company:
+    - Grievance Officer is Aman Malik, reachable at aman.m@m16labs.com. DPDP
+      requires a named person who can actually answer, and the duty is to
+      RESPOND within the statutory window — so if that inbox changes hands,
+      this page changes with it.
+    - NO phone number, deliberately. A named person and a working email satisfy
+      the requirement; a personal mobile on a page this public is scraped once
+      and spammed forever, and it buys nothing the email does not.
+    - The postal address is the Bengaluru head office, which is also the
+      MCA-registered office.
+    - Database (MongoDB Atlas) and object storage (S3) are both in ap-south-1,
+      Mumbai, so the residency statement is accurate.
+
+  Everything else is checked against the app as built and against the App
+  Privacy declaration published in App Store Connect on 23 September 2026. If
+  the app changes what it collects, this file changes in the same commit.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy Policy for HIRO, a companion app for patients managing lupus (SLE), antiphospholipid syndrome (APS) and long-term medication.">
+<title>HIRO — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #555555;
+    --accent: #0b5fff;
+    --border: #e2e2e2;
+    --code-bg: #f5f5f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --text: #eaeaea;
+      --muted: #a8a8a8;
+      --accent: #6ea8fe;
+      --border: #2c2c2c;
+      --code-bg: #1e1e1e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25em;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 2em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3em;
+  }
+  h3 {
+    font-size: 1.05rem;
+    margin-top: 1.6em;
+    margin-bottom: 0.3em;
+  }
+  p, li {
+    color: var(--text);
+    font-size: 1rem;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5em;
+  }
+  .org {
+    font-weight: 600;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.3em; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.6em 0.7em;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; }
+  .callout {
+    border-left: 3px solid var(--accent);
+    padding: 0.2em 0 0.2em 1em;
+    margin: 1.4em 0;
+    color: var(--text);
+  }
+  footer {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective date: 24 September 2026</p>
+  <p class="org">HIRO<br>
+  Meta16labs Healthcare and Analytics Private Limited</p>
+
+  <p>This Privacy Policy applies to <strong>HIRO</strong> (the &ldquo;App&rdquo;), a companion app for people living
+  with lupus (SLE), antiphospholipid syndrome (APS) and other conditions that involve long-term medication, including
+  anticoagulants. HIRO is operated by <strong>Meta16labs Healthcare and Analytics Private Limited</strong>.</p>
+
+  <p>HIRO holds health information, which is sensitive personal data. This policy sets out exactly what we collect,
+  why, who can see it, how long it is kept, and what you can ask us to do with it.</p>
+
+  <div class="callout">
+    <p><strong>HIRO is not a medical device and does not give medical advice.</strong> It records what you enter and
+    shows it back to you and, where you have a care team, to them. It does not diagnose, does not tell you what dose
+    to take, and does not tell you what to eat. If something needs attention now, contact your clinician or your local
+    emergency number.</p>
+  </div>
+
+  <h2>What we collect</h2>
+
+  <p>Everything below is collected because the App cannot do its job without it. Each item is linked to your account,
+  because a medical record that is not attached to a person is not a medical record.</p>
+
+  <table>
+    <tr><th>What</th><th>Examples</th><th>Why</th></tr>
+    <tr>
+      <td><strong>Health information</strong></td>
+      <td>INR results, blood pressure, weight, body temperature, heart rate, your medicines and their schedules,
+      doses you mark as taken or missed, conditions recorded on your profile, and meals you log</td>
+      <td>So you can keep your own record, see it over time, and share it with your care team</td>
+    </tr>
+    <tr>
+      <td><strong>Phone number</strong></td>
+      <td>The number you sign in with</td>
+      <td>It is how you sign in. We send a one-time code to it</td>
+    </tr>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td>The name you give when you create an account</td>
+      <td>So your record and your emergency card identify you</td>
+    </tr>
+    <tr>
+      <td><strong>Photos and documents</strong></td>
+      <td>Lab reports, prescriptions, photos of medicines, and photos of meals, when you choose to send them</td>
+      <td>So they are kept with your records and your care team can read them</td>
+    </tr>
+    <tr>
+      <td><strong>Your own words</strong></td>
+      <td>Notes you type, and the names you give the food you ate</td>
+      <td>Stored exactly as you wrote them, and never parsed for meaning</td>
+    </tr>
+    <tr>
+      <td><strong>Account identifiers</strong></td>
+      <td>Internal identifiers for your account and your record</td>
+      <td>To keep your data attached to you and to nobody else</td>
+    </tr>
+  </table>
+
+  <h2>What we do not collect</h2>
+
+  <p>These are worth stating plainly, because health apps commonly do all of them and HIRO does not:</p>
+
+  <ul>
+    <li><strong>No location.</strong> The App never asks for location permission and does not use location services
+    for any purpose, including the emergency screen.</li>
+    <li><strong>No advertising.</strong> There is no advertising identifier (IDFA), no App Tracking Transparency
+    prompt, and no advertising or marketing use of anything you record.</li>
+    <li><strong>No analytics or tracking SDKs.</strong> The App contains no third-party analytics, crash-reporting or
+    attribution libraries. Nothing you record is shared with a data broker or combined with third-party data.</li>
+    <li><strong>No Apple Health.</strong> HIRO does not read from or write to HealthKit.</li>
+    <li><strong>No sale of data.</strong> We do not sell personal data, and we do not use it for profiling or
+    automated decisions about you.</li>
+  </ul>
+
+  <h2>Permissions the App asks for</h2>
+  <ul>
+    <li><strong>Camera</strong> &mdash; only when you choose to photograph a lab report, prescription, medicine or
+    meal.</li>
+    <li><strong>Photo library</strong> &mdash; only when you choose an existing photo to send.</li>
+    <li><strong>Bluetooth</strong> &mdash; only to connect to your own blood pressure monitor, thermometer, oximeter
+    or scale, so a reading can fill in without typing.</li>
+    <li><strong>Notifications</strong> &mdash; optional, and only if you turn reminders on. Reminders are scheduled on
+    your phone; we do not send push notifications from our servers. A reminder never names a medicine or a dose, so
+    nothing sensitive appears on your lock screen.</li>
+  </ul>
+  <p>The App works without any of these. Declining them does not stop you recording anything by hand.</p>
+
+  <h2>Who can see your information</h2>
+
+  <h3>You</h3>
+  <p>Everything you record is visible to you in the App.</p>
+
+  <h3>Your care team</h3>
+  <p>If your account is connected to a clinic, clinicians at that clinic can see what you record, and use it when
+  caring for you. You control this: <strong>Profile &rarr; Your choices</strong> in the App lets you see what the App
+  may do with what you record, and change it at any time. Withdrawing consent stops new clinical records being
+  written.</p>
+
+  <h3>Service providers</h3>
+  <p>We use a small number of providers who process data strictly on our instructions:</p>
+  <ul>
+    <li>A messaging provider, to deliver your one-time sign-in code over WhatsApp. It receives your phone number and
+    the code, and nothing else.</li>
+    <li>A cloud hosting and database provider, which stores the records described above. Documents and photos you
+    send are stored in <strong>Mumbai, India (ap-south-1)</strong>.</li>
+  </ul>
+  <p>We do not give any provider permission to use your information for their own purposes.</p>
+
+  <h3>Nobody else</h3>
+  <p>We disclose information outside the above only where the law requires it of us, and we will tell you where we are
+  permitted to.</p>
+
+  <h2>Where your information is kept, and how it is protected</h2>
+  <ul>
+    <li>Data held <strong>on your phone</strong> is stored in an encrypted database, with the key held in the device
+    keychain. This is what lets the App work with no signal &mdash; readings you record offline are saved on the
+    phone first and sent when a connection returns.</li>
+    <li>Data held <strong>on our servers</strong> is stored in Mumbai, India (ap-south-1) and transmitted over encrypted
+    connections (HTTPS) only. Nothing is sent over an unencrypted connection.</li>
+    <li>Access by our staff is restricted and audited. Reading a patient's record is itself recorded.</li>
+    <li>The key that decrypts the data on your phone is held in the device keychain in a class that never leaves
+    that device and is never carried into an iCloud backup. Restoring a backup onto another phone does not carry your
+    key with it, so the data cannot be read there.</li>
+  </ul>
+
+  <h2>How long we keep it, and what deletion means</h2>
+
+  <p>This section is exact, because the App tells you the same thing when you close your account and the two must
+  agree.</p>
+
+  <p><strong>Closing your account</strong> (Profile &rarr; Close your account) removes your sign-in from every device
+  immediately. You will not be able to sign in again.</p>
+
+  <p><strong>Your medical record is kept, because the law requires it to be.</strong> Indian medical-records rules
+  oblige the clinic to retain clinical records for a statutory period &mdash; at least three years &mdash; so closing
+  your account does not erase readings, doses, documents or meals that form part of that record. Data that is not part
+  of the clinical record, and that we hold only for optional purposes you agreed to, is deleted when you withdraw
+  that agreement or close your account.</p>
+
+  <p>We would rather say this plainly than promise to &ldquo;delete everything&rdquo;, which would be neither true nor
+  lawful.</p>
+
+  <h2>Your rights</h2>
+  <p>Under India's Digital Personal Data Protection Act and related rules, you may:</p>
+  <ul>
+    <li>ask what personal data we hold about you and how it is processed;</li>
+    <li>ask us to correct or complete anything inaccurate;</li>
+    <li>ask us to erase data we are not legally obliged to retain;</li>
+    <li>withdraw a consent you previously gave, at any time, including in the App;</li>
+    <li>nominate someone to exercise these rights on your behalf if you are unable to; and</li>
+    <li>complain to the Data Protection Board of India if we do not resolve your concern.</li>
+  </ul>
+  <p>To exercise any of these, contact our Grievance Officer below. We will respond within the period the law allows.</p>
+
+  <h2>Children</h2>
+  <p>HIRO is intended for adults managing their own long-term condition, or for a carer acting on a patient's behalf.
+  India's Digital Personal Data Protection Act treats anyone under <strong>18</strong> as a child and requires the
+  verifiable consent of a parent or lawful guardian before their personal data is processed. We do not knowingly
+  process a child's data without that consent, and we do not use a child's data for tracking or advertising in any
+  circumstances. If you believe we hold a child's data without the required consent, contact us and we will act on
+  it.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If what we collect or how we use it changes, we will update this page and change the effective date at the top.
+  Where a change is significant, we will tell you in the App.</p>
+
+  <h2>Contact us</h2>
+  <p>For any question about this policy, about your data, or to make a request or complaint:</p>
+  <ul>
+    <li><strong>Grievance Officer:</strong> Aman Malik</li>
+    <li><strong>Email:</strong> <a href="mailto:aman.m@m16labs.com">aman.m@m16labs.com</a></li>
+    <li><strong>Address:</strong> Meta16labs Healthcare and Analytics Private Limited, 2nd Floor, Samhita Plaza, 248, 80 Feet Rd, Defence Colony, Indiranagar, Bengaluru, Karnataka 560038, India</li>
+  </ul>
+
+  <footer>
+    &copy; 2026 Meta16labs Healthcare and Analytics Private Limited. All rights reserved.
+  </footer>
+</main>
+</body>
+</html>

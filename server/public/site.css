@@ -1,0 +1,686 @@
+/* Public policy pages. Loaded after theme.css (see server/assets.js). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+@media (min-width: 48rem) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+a {
+  color: var(--stamp);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--stamp);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 10;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.4rem;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---- Layout ---- */
+
+.page {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4.5rem) 1.25rem 4rem;
+}
+
+.page--narrow {
+  max-width: 42rem;
+}
+
+@media (min-width: 72rem) {
+  .page--with-contents {
+    display: grid;
+    grid-template-columns: 14.5rem minmax(0, 44rem);
+    column-gap: clamp(3rem, 5vw, 5.5rem);
+    justify-content: center;
+    align-items: start;
+    max-width: 74rem;
+  }
+
+  .page--with-contents > .masthead,
+  .page--with-contents > .policy,
+  .page--with-contents > .colophon {
+    grid-column: 2;
+  }
+
+  .page--with-contents > .contents--rail {
+    display: block;
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  .page--with-contents > .contents--inline {
+    display: none;
+  }
+}
+
+/* ---- Masthead ---- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+  padding-bottom: clamp(1.5rem, 4vw, 2.25rem);
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead__text {
+  flex: 1 1 19rem;
+  min-width: 0;
+}
+
+.masthead__title {
+  margin: 0;
+  font-size: clamp(2.15rem, 1.35rem + 3.4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.masthead__kind {
+  display: block;
+  margin-bottom: 0.95rem;
+  color: var(--stamp);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.masthead__app {
+  display: block;
+}
+
+.masthead__operator {
+  max-width: 36rem;
+  margin: 1.1rem 0 0;
+  font-size: 1.0625rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.masthead__details {
+  margin: 0.2rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* The effective date, set like an office date stamp: the one thing a reviewer checks first. */
+.stamp {
+  flex: none;
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.15rem;
+  margin: 0.4rem 0.4rem 0 0;
+  padding: 0.55rem 1rem 0.6rem;
+  border: 2px solid currentColor;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4.5px currentColor;
+  color: var(--stamp);
+  font-family: var(--font-mono);
+  line-height: 1.1;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+
+.stamp__label {
+  margin-right: -0.26em;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+}
+
+.stamp__date {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* ---- Contents ---- */
+
+.contents {
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.contents--rail {
+  display: none;
+}
+
+.contents__title {
+  margin: 0 0 0.8rem;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contents__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contents__list a {
+  display: block;
+  padding: 0.4rem 0 0.4rem 0.9rem;
+  border-left: 2px solid var(--rule);
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.contents__list a:hover {
+  border-left-color: var(--stamp);
+  color: var(--stamp);
+}
+
+.contents--inline {
+  margin: 0 0 2.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.65rem;
+  background: var(--paper-2);
+}
+
+.contents--inline > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.contents--inline > summary::-webkit-details-marker {
+  display: none;
+}
+
+.contents--inline > summary::after {
+  content: '+';
+  margin-left: auto;
+  color: var(--ink-2);
+  font-size: 1.15rem;
+  letter-spacing: 0;
+}
+
+.contents--inline[open] > summary::after {
+  content: '\2212';
+}
+
+.contents__count {
+  color: var(--ink-3);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.contents--inline .contents__list {
+  padding: 0 1rem 1rem;
+}
+
+/* ---- Policy text ---- */
+
+.policy {
+  outline: none;
+}
+
+.policy > :first-child {
+  margin-top: 0;
+}
+
+.policy p,
+.policy ul,
+.policy ol,
+.policy dl,
+.policy blockquote,
+.policy pre,
+.policy address,
+.policy .callout,
+.policy .table-scroll {
+  margin: 0 0 1.1em;
+}
+
+.policy h2 {
+  margin: 2.6em 0 0.7em;
+  font-size: 1.45rem;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  scroll-margin-top: 1.5rem;
+  text-wrap: balance;
+}
+
+.policy h3 {
+  margin: 1.9em 0 0.45em;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  scroll-margin-top: 1.5rem;
+}
+
+.policy h2 + h3 {
+  margin-top: 1.1em;
+}
+
+.policy h4 {
+  margin: 1.6em 0 0.4em;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.policy ul,
+.policy ol {
+  padding-left: 1.35em;
+}
+
+.policy li {
+  margin: 0.4em 0;
+  padding-left: 0.2em;
+}
+
+.policy li::marker {
+  color: var(--stamp);
+}
+
+.policy li > p {
+  margin: 0.4em 0;
+}
+
+.policy strong {
+  font-weight: 700;
+}
+
+.policy a {
+  overflow-wrap: anywhere;
+}
+
+.policy code,
+.policy kbd {
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  background: var(--paper-2);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.policy pre {
+  overflow-x: auto;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--paper-2);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+.policy blockquote {
+  padding-left: 1rem;
+  border-left: 3px solid var(--rule-strong);
+  color: var(--ink-2);
+}
+
+.policy hr {
+  margin: 2.5em 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.policy img {
+  max-width: 100%;
+  height: auto;
+}
+
+.policy .callout {
+  padding: 1rem 1.2rem;
+  border-left: 4px solid var(--stamp);
+  border-radius: 0 0.55rem 0.55rem 0;
+  background: var(--stamp-tint);
+}
+
+.policy .callout > :last-child {
+  margin-bottom: 0;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 0.65rem;
+}
+
+.policy table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.policy th,
+.policy td {
+  min-width: 8.5rem;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.policy thead th {
+  background: var(--paper-2);
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.policy tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.policy caption {
+  padding: 0.75rem 0.9rem;
+  color: var(--ink-2);
+  text-align: left;
+}
+
+/* Phones: one card per row, each cell labelled with its column (see labelTableCells). */
+@media (max-width: 40rem) {
+  .table-scroll--stack {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .table-scroll--stack table,
+  .table-scroll--stack tbody,
+  .table-scroll--stack tr,
+  .table-scroll--stack th,
+  .table-scroll--stack td {
+    display: block;
+    width: 100%;
+  }
+
+  .table-scroll--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .table-scroll--stack tbody tr {
+    margin-bottom: 0.75rem;
+    padding: 0.8rem 1rem 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.65rem;
+  }
+
+  .policy .table-scroll--stack td,
+  .policy .table-scroll--stack th {
+    min-width: 0;
+    padding: 0.3rem 0;
+    border: 0;
+  }
+
+  .table-scroll--stack [data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.1rem;
+    color: var(--ink-3);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* The first cell names the row, so it reads as the card's title. */
+  .table-scroll--stack tr > :first-child {
+    font-size: 1.0625rem;
+  }
+
+  .table-scroll--stack tr > :first-child::before {
+    display: none;
+  }
+}
+
+/* ---- Footer ---- */
+
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.colophon p {
+  margin: 0 0 0.45rem;
+}
+
+.colophon__address {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+
+/* ---- List of policies ("/") ---- */
+
+.masthead--home {
+  display: block;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.register__list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+  list-style: none;
+}
+
+.register__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.2rem 1.5rem;
+  padding: 1.15rem 0.25rem;
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+
+.register__app {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.register__operator {
+  grid-column: 1;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.register__date {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.register__item:hover .register__app {
+  color: var(--stamp);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+.register__empty {
+  color: var(--ink-2);
+}
+
+@media (max-width: 32rem) {
+  .register__item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .register__date {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 0.35rem;
+  }
+}
+
+/* ---- 404 and error pages ---- */
+
+.message {
+  padding-top: clamp(1rem, 8vh, 5rem);
+}
+
+.message__code {
+  margin: 0 0 0.9rem;
+  color: var(--stamp);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.message__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.message__text {
+  max-width: 34rem;
+  color: var(--ink-2);
+}
+
+/* ---- Print ---- */
+
+@media print {
+  :root {
+    --paper: #fff;
+    --paper-2: #fff;
+    --ink: #000;
+    --ink-2: #333;
+    --ink-3: #555;
+    --rule: #bbb;
+    --stamp: #4a2fb0;
+    --stamp-tint: #fff;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  .skip-link,
+  .contents {
+    display: none !important;
+  }
+
+  .page,
+  .page--with-contents {
+    display: block;
+    max-width: none;
+    padding: 0;
+  }
+
+  .policy h2,
+  .policy h3 {
+    break-after: avoid;
+  }
+
+  .policy table,
+  .policy .callout,
+  .policy li {
+    break-inside: avoid;
+  }
+
+  .policy a {
+    color: inherit;
+  }
+
+  .policy a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    color: #555;
+    font-size: 0.85em;
+  }
+
+  .table-scroll {
+    overflow: visible;
+  }
+}

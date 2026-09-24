@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .ink { fill: none; stroke: #5a3dc8; stroke-width: 2.4; stroke-linecap: round; }
+    @media (prefers-color-scheme: dark) { .ink { stroke: #b6a3ff; } }
+  </style>
+  <g transform="rotate(-8 16 16)">
+    <rect class="ink" x="3.5" y="7" width="25" height="18" rx="4"/>
+    <path class="ink" d="M9.5 14h13M9.5 18.5h8"/>
+  </g>
+</svg>
