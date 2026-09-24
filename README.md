@@ -9,7 +9,13 @@ at **https://privacypolicies.metahos.com**.
   `policies/hiro.html`.
 - `/<app>/support` is each app's support page, if it has one: `support/<app>.html`. For example
   `/hiro/support` is `support/hiro.html`.
-- Anything else shows a "Page not found" page.
+- Anything else shows a "Page not found" page, listing every page on the site.
+
+The server adds a site bar to the top of every page as it serves it: a link back to `/` and, when
+an app has both, tabs for its privacy policy and support page. It also points each page's
+stylesheet link at `/assets/site.css?v=<fingerprint>`, so browsers cache the stylesheet for a year
+and still fetch a new one as soon as `site.css` changes. The files in `policies/` and `support/`
+are never modified.
 
 Which app belongs to which codebase and store is in [APPS.md](APPS.md).
 
