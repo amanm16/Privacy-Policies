@@ -2,7 +2,7 @@
 <!--
   HIRO — privacy policy.
 
-  COMPLETE as of 24 September 2026. No placeholders remain; it can be published
+  COMPLETE as of 6 October 2026. No placeholders remain; it can be published
   as it stands.
 
   Confirmed by the company:
@@ -130,7 +130,7 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: 24 September 2026</p>
+  <p class="meta">Effective date: 6 October 2026 &middot; previously 24 September 2026</p>
   <p class="org">HIRO<br>
   Meta16labs Healthcare and Analytics Private Limited</p>
 
@@ -199,10 +199,45 @@
     prompt, and no advertising or marketing use of anything you record.</li>
     <li><strong>No analytics or tracking SDKs.</strong> The App contains no third-party analytics, crash-reporting or
     attribution libraries. Nothing you record is shared with a data broker or combined with third-party data.</li>
-    <li><strong>No Apple Health.</strong> HIRO does not read from or write to HealthKit.</li>
+    <li><strong>Nothing is written back to Apple Health or Health Connect.</strong> HIRO can read readings you
+    have already recorded there, if you ask it to and grant permission &mdash; see <em>Readings from Apple Health
+    and Health Connect</em> below. It holds no permission to write, and never adds, changes or deletes anything in
+    them.</li>
+    <li><strong>No health data for advertising.</strong> Nothing read from Apple Health or Health Connect is used
+    for advertising, marketing, profiling or any form of data mining, and none of it is shared with a third party
+    for those purposes.</li>
     <li><strong>No sale of data.</strong> We do not sell personal data, and we do not use it for profiling or
     automated decisions about you.</li>
   </ul>
+
+  <h2>Readings from Apple Health and Health Connect</h2>
+
+  <p>If you choose to, HIRO can bring in measurements your phone, watch or connected devices have already recorded
+  &mdash; on an iPhone from <strong>Apple Health</strong>, and on Android from <strong>Health Connect</strong>. This
+  is entirely optional. The App works fully without it, and you can record every one of these readings by hand
+  instead.</p>
+
+  <p><strong>What it may read.</strong> Only these measurements, and only with your permission: blood pressure,
+  weight, body temperature, blood oxygen, resting heart rate, heart rate, heart-rate variability, breathing rate,
+  steps and sleep duration. It asks for nothing else. It cannot see your medical records from a hospital or clinic
+  through these services.</p>
+
+  <p><strong>How it works.</strong> The App reads the last seven days when you tap the button, and at no other time.
+  It never reads in the background, and it is not running when you are not looking at it. It then shows you every
+  reading it found, and <strong>nothing is saved until you choose what to keep</strong>. Readings you do not keep are
+  discarded and never sent anywhere.</p>
+
+  <p><strong>What happens to what you keep.</strong> It is stored on your phone and sent to your medical record in
+  the same way as a reading you typed yourself, and it is treated exactly the same afterwards &mdash; same encryption,
+  same retention, same rights. The record notes where each reading came from, for example &ldquo;from Apple
+  Watch&rdquo;.</p>
+
+  <p><strong>What it never does.</strong> It never writes anything to Apple Health or Health Connect. It never uses
+  this data for advertising, marketing or data mining. It never shares it with a third party for those purposes.</p>
+
+  <p>You can withdraw the permission at any time in Apple Health or Health Connect, and in your phone&rsquo;s
+  settings. Doing so stops any further reading immediately; readings you already chose to keep stay in your medical
+  record, like any other reading you recorded.</p>
 
   <h2>Permissions the App asks for</h2>
   <ul>
@@ -211,6 +246,9 @@
     <li><strong>Photo library</strong> &mdash; only when you choose an existing photo to send.</li>
     <li><strong>Bluetooth</strong> &mdash; only to connect to your own blood pressure monitor, thermometer, oximeter
     or scale, so a reading can fill in without typing.</li>
+    <li><strong>Apple Health</strong> (iPhone) or <strong>Health Connect</strong> (Android) &mdash; optional, read
+    only, and only if you choose to bring readings in. HIRO asks for permission to READ specific measurements and
+    never for permission to write.</li>
     <li><strong>Notifications</strong> &mdash; optional, and only if you turn reminders on. Reminders are scheduled on
     your phone; we do not send push notifications from our servers. A reminder never names a medicine or a dose, so
     nothing sensitive appears on your lock screen.</li>
