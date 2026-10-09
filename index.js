@@ -41,7 +41,7 @@ const KINDS = [
 // goes in both lists.
 const STORES = [
   { name: 'App Store', platform: 'iOS', apps: ['hiro'] },
-  { name: 'Google Play', platform: 'Android', apps: ['dbocwwb', 'kbocwwb'] },
+  { name: 'Google Play', platform: 'Android', apps: ['dbocwwb', 'hiro', 'kbocwwb'] },
 ];
 
 const TYPES = {

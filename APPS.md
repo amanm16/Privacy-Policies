@@ -3,9 +3,11 @@
 This site exists because App Store and Google Play submissions were rejected: the apps had no
 publicly deployed privacy policy URL. Each page here is the URL pasted into a store listing.
 
-> **The policy text is frozen for now.** Don't edit anything in `policies/` or `Documents/` until
-> Aman says otherwise (decided 24 Sep 2026). That includes the markup, not just the wording. Known
-> issues are listed at the end, ready for when that changes.
+> **The DBOCWWB and KBOCWWB policy text is frozen for now.** Don't edit those files in
+> `policies/` or `Documents/` until Aman says otherwise (decided 24 Sep 2026). That includes the
+> markup, not just the wording. Known issues are listed at the end, ready for when that changes.
+> HIRO's policy and support page are kept up to date with the app, at Aman's request (6 and
+> 9 Oct 2026).
 
 ## Which policy belongs to which app
 
@@ -13,13 +15,15 @@ publicly deployed privacy policy URL. Each page here is the URL pasted into a st
 |---|---|---|---|---|---|
 | [/dbocwwb](https://privacypolicies.metahos.com/dbocwwb) | DBOCWWB Labour Welfare (Delhi Building & Other Construction Workers Welfare Board) | `/Users/aman/Desktop/GCDMS_MOBILE` | `dbocwwb` | `com.dbocwwb.dsk` | Android, iOS |
 | [/kbocwwb](https://privacypolicies.metahos.com/kbocwwb) | KBOCWWB Labour Welfare (Karnataka Building & Other Construction Workers Welfare Board) | `/Users/aman/Desktop/GCDMS_MOBILE` | `main` (default) | `com.karmikasethu.ksk` | Android, iOS |
-| [/hiro](https://privacypolicies.metahos.com/hiro) | HIRO (Xcode project `MetaImmuneHIRO`) | `/Users/aman/Desktop/HIRO app` | `master` | `com.metaimmune.hiro` | iOS only |
+| [/hiro](https://privacypolicies.metahos.com/hiro) | HIRO (Xcode project `MetaImmuneHIRO`) | `/Users/aman/Desktop/HIRO app` | `master` | `com.metaimmune.hiro` | Android, iOS |
 
 The file for each is `policies/<slug>.html`, and the original it was made from is in `Documents/`.
 
 HIRO also has a support page, because the App Store requires a Support URL (guideline 1.5):
 [/hiro/support](https://privacypolicies.metahos.com/hiro/support), `support/hiro.html`, made from
-`Documents/HIRO — Support.html`.
+`Documents/HIRO — Support.html`. Its `#how-do-i-delete-my-account` section is also HIRO's Google
+Play **Delete account URL**. That section says how to ask for deletion without the app, by email,
+as Play requires.
 
 ## GCDMS_MOBILE (DBOCWWB and KBOCWWB)
 
@@ -40,10 +44,17 @@ HIRO also has a support page, because the App Store requires a Support URL (guid
 
 ## HIRO app
 
-- Bare React Native, iOS only: the repo has `ios/MetaImmuneHIRO` and no `android/`. Remote `base`
-  is `github.com/amanm16/HIRO-app`.
-- The store copy is in `appstore/listing-copy.md`. The App Privacy answers in App Store Connect must
-  match `ios/MetaImmuneHIRO/PrivacyInfo.xcprivacy`.
+- Bare React Native, on iOS (`ios/MetaImmuneHIRO`) and Android (`android/`, on Google Play since
+  9 Oct 2026). One policy and one support page serve both stores, so every Android-only fact is
+  labelled "on Android", and an iPhone-only one "iPhone". Remote `base` is
+  `github.com/amanm16/HIRO-app`.
+- **App Store.** The store copy is in `appstore/listing-copy.md`, and the App Privacy answers in App
+  Store Connect must match `ios/MetaImmuneHIRO/PrivacyInfo.xcprivacy`.
+- **Google Play.** The store copy and the Data safety answers are in `appstore/play-console.md`.
+  Data safety must match the permissions in the release APK (`aapt2 dump permissions`).
+- Health Connect's permission screen opens `/hiro` itself (`HealthPermissionsRationaleActivity` in
+  the app). Google requires that link to show the same policy as the Play listing, so keep the
+  address.
 - The header comment in `Documents/HIRO — Privacy Policy.html` records that the policy was checked
   against the app as built and against the App Privacy declaration published on 23 Sep 2026. If
   the app changes what it collects, the policy changes in the same commit.

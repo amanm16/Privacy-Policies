@@ -23,7 +23,7 @@
       <p class="masthead__operator">Meta16labs Healthcare and Analytics Private Limited</p>
       
     </div>
-    <p class="stamp"><span class="stamp__label">Effective</span> <time class="stamp__date" datetime="2026-10-06">6 Oct 2026</time></p>
+    <p class="stamp"><span class="stamp__label">Effective</span> <time class="stamp__date" datetime="2026-10-09">9 Oct 2026</time></p>
   </header>
   <nav class="contents contents--rail" aria-label="Contents">
     <p class="contents__title">Contents</p>
@@ -53,7 +53,7 @@
     <tbody role="rowgroup">
       <tr role="row">
         <td role="cell" data-label="What"><strong>Health information</strong></td>
-        <td role="cell" data-label="Examples">INR results, blood pressure, weight, body temperature, heart rate, your medicines and their schedules, doses you mark as taken or missed, conditions recorded on your profile, and meals you log</td>
+        <td role="cell" data-label="Examples">INR results, blood pressure, weight, body temperature, heart rate, your medicines and their schedules, doses you mark as taken or missed, your answers to the daily check-in, conditions and allergies recorded on your profile, whether you take a blood thinner, and meals you log</td>
         <td role="cell" data-label="Why">So you can keep your own record, see it over time, and share it with your care team</td>
       </tr>
       <tr role="row">
@@ -65,6 +65,11 @@
         <td role="cell" data-label="What"><strong>Name</strong></td>
         <td role="cell" data-label="Examples">The name you give when you create an account</td>
         <td role="cell" data-label="Why">So your record and your emergency card identify you</td>
+      </tr>
+      <tr role="row">
+        <td role="cell" data-label="What"><strong>Profile details</strong></td>
+        <td role="cell" data-label="Examples">Your date of birth, and the names and phone numbers of the emergency contacts you add</td>
+        <td role="cell" data-label="Why">So your emergency card shows them to whoever is treating you. Add someone only if they are happy to be contacted</td>
       </tr>
       <tr role="row">
         <td role="cell" data-label="What"><strong>Photos and documents</strong></td>
@@ -88,7 +93,7 @@
 <p>These are worth stating plainly, because health apps commonly do all of them and HIRO does not:</p>
 <ul>
   <li><strong>No location.</strong> The App never asks for location permission and does not use location services for any purpose, including the emergency screen.</li>
-  <li><strong>No advertising.</strong> There is no advertising identifier (IDFA), no App Tracking Transparency prompt, and no advertising or marketing use of anything you record.</li>
+  <li><strong>No advertising.</strong> The App reads no advertising identifier — not the IDFA on an iPhone, nor the advertising ID on Android — never shows an App Tracking Transparency prompt, and makes no advertising or marketing use of anything you record.</li>
   <li><strong>No analytics or tracking SDKs.</strong> The App contains no third-party analytics, crash-reporting or attribution libraries. Nothing you record is shared with a data broker or combined with third-party data.</li>
   <li><strong>Nothing is written back to Apple Health or Health Connect.</strong> HIRO can read readings you have already recorded there, if you ask it to and grant permission — see <em>Readings from Apple Health and Health Connect</em> below. It holds no permission to write, and never adds, changes or deletes anything in them.</li>
   <li><strong>No health data for advertising.</strong> Nothing read from Apple Health or Health Connect is used for advertising, marketing, profiling or any form of data mining, and none of it is shared with a third party for those purposes.</li>
@@ -100,14 +105,15 @@
 <p><strong>How it works.</strong> The App reads the last seven days when you tap the button, and at no other time. It never reads in the background. It then shows you every reading it found, and <strong>nothing is saved until you choose what to keep</strong>. Readings you do not keep are discarded and never sent anywhere.</p>
 <p><strong>What happens to what you keep.</strong> It is stored on your phone and sent to your medical record in the same way as a reading you typed yourself, and it is treated exactly the same afterwards — same encryption, same retention, same rights. The record notes where each reading came from, for example "from Apple Watch".</p>
 <p><strong>What it never does.</strong> It never writes anything to Apple Health or Health Connect. It never uses this data for advertising, marketing or data mining. It never shares it with a third party for those purposes.</p>
+<p><strong>Limited use.</strong> HIRO uses readings from Apple Health and Health Connect for one purpose only: to show them to you, and to add the ones you choose to keep to your record for you and your care team. HIRO's use of information received from Health Connect adheres to the Health Connect Permissions policy, including its Limited Use requirements, and its use of information from Apple Health follows Apple's HealthKit rules in the same way.</p>
 <p>You can withdraw the permission at any time in Apple Health or Health Connect, and in your phone's settings. Doing so stops any further reading immediately; readings you already chose to keep stay in your medical record, like any other reading you recorded.</p>
 <h2 id="permissions-the-app-asks-for">Permissions the App asks for</h2>
 <ul>
-  <li><strong>Camera</strong> — only when you choose to photograph a lab report, prescription, medicine or meal.</li>
-  <li><strong>Photo library</strong> — only when you choose an existing photo to send.</li>
-  <li><strong>Bluetooth</strong> — only to connect to your own blood pressure monitor, thermometer, oximeter or scale, so a reading can fill in without typing.</li>
+  <li><strong>Camera</strong> — only when you choose to photograph a lab report, prescription, medicine or meal. On Android, your phone's own camera app takes the photo and hands HIRO only that photo, so HIRO does not ask for the camera permission at all.</li>
+  <li><strong>Photo library</strong> — only when you choose an existing photo to send. On Android, the system photo picker gives HIRO only the photos you pick, so HIRO does not ask for access to your photos.</li>
+  <li><strong>Bluetooth</strong> (iPhone only) — only to connect to your own blood pressure monitor, thermometer, oximeter or scale, so a reading can fill in without typing. The Android app does not use Bluetooth and does not ask for it.</li>
   <li><strong>Apple Health</strong> (iPhone) or <strong>Health Connect</strong> (Android) — optional, read only, and only if you choose to bring readings in. HIRO asks for permission to READ specific measurements and never for permission to write.</li>
-  <li><strong>Notifications</strong> — optional, and only if you turn reminders on. Reminders are scheduled on your phone; we do not send push notifications from our servers. A reminder never names a medicine or a dose, so nothing sensitive appears on your lock screen.</li>
+  <li><strong>Notifications</strong> — optional, and only if you turn reminders on. Reminders are scheduled on your phone; we do not send push notifications from our servers. A reminder never names a medicine or a dose, so nothing sensitive appears on your lock screen. On Android, you can also allow <em>Alarms &amp; reminders</em> so a reminder arrives at the minute it is due, and the App sets your reminders again after the phone restarts.</li>
 </ul>
 <p>The App works without any of these. Declining them does not stop you recording anything by hand.</p>
 <h2 id="who-can-see-your-information">Who can see your information</h2>
@@ -126,14 +132,16 @@
 <p>We disclose information outside the above only where the law requires it of us, and we will tell you where we are permitted to.</p>
 <h2 id="where-your-information-is-kept-and-how-it-is-protected">Where your information is kept, and how it is protected</h2>
 <ul>
-  <li>Data held <strong>on your phone</strong> is stored in an encrypted database, with the key held in the device keychain. This is what lets the App work with no signal — readings you record offline are saved on the phone first and sent when a connection returns.</li>
+  <li>Data held <strong>on your phone</strong> is stored in an encrypted database, with the key held in the device's secure key store (the keychain on an iPhone, the Android Keystore on Android). This is what lets the App work with no signal — readings you record offline are saved on the phone first and sent when a connection returns.</li>
   <li>Data held <strong>on our servers</strong> is stored in Mumbai, India (ap-south-1) and transmitted over encrypted connections (HTTPS) only. Nothing is sent over an unencrypted connection.</li>
   <li>Access by our staff is restricted and audited. Reading a patient's record is itself recorded.</li>
   <li>The key that decrypts the data on your phone is held in the device keychain in a class that never leaves that device and is never carried into an iCloud backup. Restoring a backup onto another phone does not carry your key with it, so the data cannot be read there.</li>
+  <li>On Android, the key is held in the Android Keystore and never leaves the phone, and the App's data is excluded from Google backups and from transfers to a new phone, so none of it is copied off the device.</li>
 </ul>
 <h2 id="how-long-we-keep-it-and-what-deletion-means">How long we keep it, and what deletion means</h2>
 <p>This section is exact, because the App tells you the same thing when you close your account and the two must agree.</p>
 <p><strong>Closing your account</strong> (Profile → Close your account) removes your sign-in from every device immediately. You will not be able to sign in again.</p>
+<p><strong>Without the App</strong> — for example, if you no longer have the phone — email <a href="mailto:support@m16labs.com?subject=Delete%20my%20HIRO%20account">support@m16labs.com</a> with the subject <em>Delete my HIRO account</em> and the phone number you sign in with. We confirm the request with you before we act on it, and tell you when your account is closed. The same applies to what is kept, below.</p>
 <p><strong>Your medical record is kept, because the law requires it to be.</strong> Indian medical-records rules oblige the clinic to retain clinical records for a statutory period — at least three years — so closing your account does not erase readings, doses, documents or meals that form part of that record. Data that is not part of the clinical record, and that we hold only for optional purposes you agreed to, is deleted when you withdraw that agreement or close your account.</p>
 <p>We would rather say this plainly than promise to “delete everything”, which would be neither true nor lawful.</p>
 <h2 id="your-rights">Your rights</h2>
@@ -160,7 +168,7 @@
 </ul>
   </main>
   <footer class="colophon">
-    <p>Effective 6 October 2026.</p>
+    <p>Effective 9 October 2026.</p>
     <p>Questions about this policy? Email <a href="mailto:aman.m@m16labs.com">aman.m@m16labs.com</a>.</p>
     <p>&copy; 2026 Meta16labs Healthcare and Analytics Private Limited. All rights reserved.</p>
     <p class="colophon__address">https://privacypolicies.metahos.com/hiro</p>
