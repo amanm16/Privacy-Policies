@@ -23,7 +23,7 @@
       <p class="masthead__operator">Meta16labs Healthcare and Analytics Private Limited</p>
       
     </div>
-    <p class="stamp"><span class="stamp__label">Effective</span> <time class="stamp__date" datetime="2026-10-27">27 Oct 2026</time></p>
+    <p class="stamp"><span class="stamp__label">Effective</span> <time class="stamp__date" datetime="2026-10-29">29 Oct 2026</time></p>
   </header>
   <nav class="contents contents--rail" aria-label="Contents">
     <p class="contents__title">Contents</p>
@@ -110,19 +110,23 @@
   <li><strong>No sale of data.</strong> We do not sell personal data, and we do not use it for profiling or automated decisions about you.</li>
 </ul>
 <h2 id="readings-from-apple-health-and-health-connect">Readings from Apple Health and Health Connect</h2>
-<p>If you choose to, HIRO can bring in measurements your phone, watch or connected devices have already recorded — on an iPhone from <strong>Apple Health</strong>, and on Android from <strong>Health Connect</strong>. This is entirely optional. The App works fully without it, and you can record every one of these readings by hand instead.</p>
-<p><strong>What it may read.</strong> Only these measurements, and only with your permission: blood pressure, weight, body temperature, blood oxygen, resting heart rate, heart rate, heart-rate variability, breathing rate, steps and sleep duration. It asks for nothing else. It cannot see your medical records from a hospital or clinic through these services.</p>
-<p><strong>How it works.</strong> The App reads the last seven days when you tap the button, and at no other time. It never reads in the background. It then shows you every reading it found, and <strong>nothing is saved until you choose what to keep</strong>. Readings you do not keep are discarded and never sent anywhere.</p>
-<p><strong>What happens to what you keep.</strong> It is stored on your phone and sent to your medical record in the same way as a reading you typed yourself, and it is treated exactly the same afterwards — same encryption, same retention, same rights. The record notes where each reading came from, for example "from Apple Watch".</p>
+<p>If you choose to, HIRO can bring in measurements your phone, watch, ring or connected devices have already recorded — on an iPhone from <strong>Apple Health</strong>, and on Android from <strong>Health Connect</strong>. A watch or ring (for example a Samsung Galaxy Watch, an Apple Watch, a Fitbit, a Garmin or an Oura ring) reaches HIRO this way: its own app shares what it records with Apple Health or Health Connect, and HIRO reads it from there. HIRO never connects to the watch maker's own servers. This is entirely optional. The App works fully without it, and you can record every one of these readings by hand instead.</p>
+<p><strong>What it may read.</strong> Only these measurements, and only with your permission: blood pressure, weight, body temperature, blood oxygen, resting heart rate, heart rate, heart-rate variability, breathing rate, steps, sleep and its stages (deep, REM, light and time awake), skin temperature at night, active energy, exercise time, cardio fitness (VO<sub>2</sub> max), and, on an iPhone, ECG results and irregular-rhythm notifications as your Apple Watch classified them. It asks for nothing else. It never reads an ECG's recording itself, only the watch's result. It cannot see your medical records from a hospital or clinic through these services.</p>
+<p><strong>How it works.</strong> There are two ways, and both happen only while HIRO is open; it never reads in the background, while the App is closed.</p>
+<ul>
+  <li><strong>When you choose readings yourself.</strong> HIRO reads the last seven days when you tap the button, shows you every reading it found, and <strong>nothing is saved until you choose what to keep</strong>. Readings you do not keep are discarded and never sent anywhere.</li>
+  <li><strong>If you switch on automatic reading</strong> (in Profile › Watches &amp; rings). Each time you open HIRO, it reads what your watch or ring has finished recording since last time — for example last night's sleep, or yesterday's steps — and adds it to your record without asking about each one. Switching it on is a separate consent (“Readings from a watch or ring”, under Your choices), and switching it off, there or in Watches &amp; rings, stops it straight away. A reading that looks impossible is never added automatically; HIRO keeps it aside for you to look at.</li>
+</ul>
+<p><strong>What happens to what is kept.</strong> It is stored on your phone and sent to your medical record, and is treated afterwards like any other reading — same encryption, same retention, same rights. The record notes where each reading came from, for example “from Galaxy Watch7 (Samsung Health)”, and whether you chose it yourself or it was brought in automatically. A watch's or ring's blood oxygen and blood pressure are recorded as estimates, not as measurements, because that is what they are. Nobody watches these readings as they arrive: an ECG result or an irregular-rhythm notification is shown to you and your care team as your watch's own result, and HIRO raises no alarm from it.</p>
 <p><strong>What it never does.</strong> It never writes anything to Apple Health or Health Connect. It never uses this data for advertising, marketing or data mining. It never shares it with a third party for those purposes.</p>
 <p><strong>Limited use.</strong> HIRO uses readings from Apple Health and Health Connect for one purpose only: to show them to you, and to add the ones you choose to keep to your record for you and your care team. HIRO's use of information received from Health Connect adheres to the Health Connect Permissions policy, including its Limited Use requirements, and its use of information from Apple Health follows Apple's HealthKit rules in the same way.</p>
-<p>You can withdraw the permission at any time in Apple Health or Health Connect, and in your phone's settings. Doing so stops any further reading immediately; readings you already chose to keep stay in your medical record, like any other reading you recorded.</p>
+<p>You can withdraw the permission at any time in Apple Health or Health Connect, and in your phone's settings. Doing so stops any further reading immediately; readings already kept stay in your medical record, like any other reading you recorded.</p>
 <h2 id="permissions-the-app-asks-for">Permissions the App asks for</h2>
 <ul>
   <li><strong>Camera</strong> — only when you choose to photograph a lab report, prescription, medicine or meal. On Android, your phone's own camera app takes the photo and hands HIRO only that photo, so HIRO does not ask for the camera permission at all.</li>
   <li><strong>Photo library</strong> — only when you choose an existing photo to send. On Android, the system photo picker gives HIRO only the photos you pick, so HIRO does not ask for access to your photos.</li>
   <li><strong>Bluetooth</strong> — only to connect to your own blood pressure monitor, thermometer, oximeter or scale, so a reading can fill in without typing, and only when you tap <em>Use a connected device</em>. On Android this is the <em>Nearby devices</em> permission, and it is offered on Android 12 and later only. HIRO declares that it never uses it to work out where you are, so Android removes location from what a scan returns. On Android 11 and earlier, scanning for devices would need the location permission, which HIRO never asks for, so there you type readings in instead.</li>
-  <li><strong>Apple Health</strong> (iPhone) or <strong>Health Connect</strong> (Android) — optional, read only, and only if you choose to bring readings in. HIRO asks for permission to READ specific measurements and never for permission to write.</li>
+  <li><strong>Apple Health</strong> (iPhone) or <strong>Health Connect</strong> (Android) — optional, read only, and only if you choose to bring readings in or switch on automatic reading from a watch or ring. HIRO asks for permission to READ specific measurements and never for permission to write. It does not ask Health Connect for background access or for history older than 30 days.</li>
   <li><strong>Notifications</strong> — optional. HIRO asks once, after you sign in, and you can answer <em>Not now</em>. Medicine and meal reminders are on unless you turn them off in Profile → Reminders, and none can reach you until you allow notifications. Reminders are scheduled on your phone; we do not send push notifications from our servers. A reminder never names a medicine or a dose, so nothing sensitive appears on your lock screen. On Android, you can also allow <em>Alarms &amp; reminders</em> so a medicine reminder arrives at the minute it is due, and the App sets your reminders again after the phone restarts.</li>
 </ul>
 <p>The App works without any of these. Declining them does not stop you recording anything by hand.</p>
@@ -178,7 +182,7 @@
 </ul>
   </main>
   <footer class="colophon">
-    <p>Effective 27 October 2026.</p>
+    <p>Effective 29 October 2026.</p>
     <p>Questions about this policy? Email <a href="mailto:aman.m@m16labs.com">aman.m@m16labs.com</a>.</p>
     <p>&copy; 2026 Meta16labs Healthcare and Analytics Private Limited. All rights reserved.</p>
     <p class="colophon__address">https://privacypolicies.metahos.com/hiro</p>
